@@ -1,36 +1,20 @@
 $(document).ready(function() {
-  $("form#grocery-list").submit(function(event){
+  $("form#user-sentence").submit(function(event){
     event.preventDefault();
-    // Array od HTML id names
-    var itemNames = ["item-1", "item-2", "item-3", "item-4"];
 
-    // Initializes two empty arrays
-    // var groceryList = []; DEPRECIATED!!!!!
-    var upperCaseGroceryList = [];
+    var sentence = $("#sentence").val();
 
-    // Uses item names to create an array of user inputted grocery items
-    // itemNames.forEach(function(redRabbitAlien){ DEPRECIATED!!!!!!
-    //   groceryList.push($("#" + redRabbitAlien).val()); DEPRECIATED!!!!!!
-    // }); DEPRECIATED!!!!!!
+    // An array of words
+    var splitSentence = sentence.split(" ");
 
-    upperCaseGroceryList = itemNames.map(function(suchMunDoges){
-      return ($("#" + suchMunDoges).val()).toUpperCase();
+    // FILTER
+    var mappedSentence = splitSentence.filter(function(purpleSpaceMonkey) {
+      return purpleSpaceMonkey.length >= 3;
     });
 
-    // Sorts the newly created grocery array
-    // groceryList.sort(); DEPRECIATED!!!!!!
-    upperCaseGroceryList.sort();
+    mappedSentence.reverse();
 
-    // upperCaseGroceryList = groceryList.map(function(greenTiger){ DEPRECIATED!!!!!!
-    //   return greenTiger.toUpperCase(); DEPRECIATED!!!!!!
-    // }); DEPRECIATED!!!!!!
+    alert(mappedSentence.join(' '));
 
-    $("form#grocery-list").hide();
-
-    upperCaseGroceryList.forEach(function(pinkBigfoot){
-      $("ul#grocery-list-ul").append("<li>" + pinkBigfoot + "</li>");
-    });
-
-    $("div.list-o-groceries").show();
   });
 });
