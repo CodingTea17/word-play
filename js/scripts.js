@@ -18,8 +18,10 @@ $(document).ready(function() {
       return ($("#" + suchMunDoges).val()).toUpperCase();
     });
 
+
     // Sorts the newly created grocery array
     // groceryList.sort(); DEPRECIATED!!!!!!
+    upperCaseGroceryList.sort();
 
     // upperCaseGroceryList = groceryList.map(function(greenTiger){ DEPRECIATED!!!!!!
     //   return greenTiger.toUpperCase(); DEPRECIATED!!!!!!
